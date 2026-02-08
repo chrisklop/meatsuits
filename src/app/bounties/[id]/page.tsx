@@ -241,14 +241,15 @@ export default async function BountyDetailPage({ params }: PageProps) {
             {/* Action Button */}
             <div>
               {bounty.status === "open" && (
-                <NeonButton
-                  variant="primary"
-                  size="lg"
-                  className="w-full"
-                  onClick={() => alert("Connect wallet to claim this bounty")}
-                >
-                  CLAIM BOUNTY
-                </NeonButton>
+                <Link href="/auth/login">
+                  <NeonButton
+                    variant="primary"
+                    size="lg"
+                    className="w-full"
+                  >
+                    CLAIM BOUNTY
+                  </NeonButton>
+                </Link>
               )}
 
               {bounty.status === "claimed" && (
